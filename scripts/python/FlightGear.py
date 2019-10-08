@@ -1,9 +1,7 @@
 from telnetlib import Telnet
-import sys
 import socket
 import re
-from string import split, join
-import time
+from string import split
 
 __all__ = ["FlightGear"]
 
@@ -24,7 +22,7 @@ class FGTelnet(Telnet):
         """
         Returns a list of properties.
         """
-        if dir == None:
+        if dir is None:
             self._putcmd('ls')
         else:
             self._putcmd('ls %s' % dir )
